@@ -1,26 +1,3 @@
-section {
-  display: none;
-}
-
-section:target {
-  display: block;
-}
-
-.subpage {
-  display: none;
-}
-
-
-#profile:has(.subpage:target) {
-  display: block;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-}
-
-
-
 header {
     width: 100%;
     font-size: 28px;

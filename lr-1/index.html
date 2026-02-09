@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SportUA</title>
-    <link rel="stylesheet" href="United.css">
-    <link rel="stylesheet" href="reset.css">
+
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/headerStyle.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/profile.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
+
 
 <body>
     <header>
@@ -119,43 +124,50 @@
         </section>
 
         <section id="profile">
+            <div class="profile_conteiner">
 
-            <div class="user_image_container">
-                <img src="" alt="No image">
-            </div>
+                <div class="user_info_container">
+                    <div class="user_image_container">
+                        <img src="" alt="No image">
+                    </div>
 
-            <div class="user_info">
-                <h2>User name</h2>
-                <p><span>Email: </span>User email</p>
-                <p><span>Number: </span> +380990626544</p>
-                <p><span>Description: </span>User description</p>
-                <p>Items in card: 52</p>
-            </div>
-
-            <div class="sections_btns">
-                <a href="#profile-history">History</a>
-                <a href="#profile-selected">Selected</a>
-            </div>
-
-            <section id="profile-history" class="subpage">
-                <div class="user_history_conteiner">
-                    <div>Item1</div>
-                    <div>Item2</div>
-                    <div>Item3</div>
-                    <div>Item4</div>
+                    <div class="user_info">
+                        <h2>User name</h2>
+                        <p><span>Email: </span>User email</p>
+                        <p><span>Number: </span> +380990626544</p>
+                        <p><span>Description: </span>User description</p>
+                        <p><span>Items in card: </span>52</p>
+                    </div>
                 </div>
-            </section>
 
-            <section id="profile-selected" class="subpage">
-                <div class="user_selected_conteiner">
-                    <div>Selected Item 1</div>
-                    <div>Selected Item 2</div>
-                    <div>Selected Item 3</div>
-                    <div>Selected Item 4</div>
+                <div class="additional_info">
+                    <div class="sections_btns">
+                        <a href="#profile-history">History</a>
+                        <a href="#profile-selected">Selected</a>
+                    </div>
+
+                    <section id="profile-history" class="subpage">
+                        <div class="user_history_conteiner">
+                            <div>Item1</div>
+                            <div>Item2</div>
+                            <div>Item3</div>
+                            <div>Item4</div>
+                        </div>
+                    </section>
+
+                    <section id="profile-selected" class="subpage">
+                        <div class="user_selected_conteiner">
+                            <div>Selected Item 1</div>
+                            <div>Selected Item 2</div>
+                            <div>Selected Item 3</div>
+                            <div>Selected Item 4</div>
+                        </div>
+                    </section>
                 </div>
-            </section>
+                
 
-            
+            </div>
+                
         </section>
 
         <section id="about_us">

@@ -1,0 +1,73 @@
+.profile_conteiner{
+    max-width: 1200px;
+
+    margin: auto;
+    margin-top: 20px ;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+
+}
+.user_image_container{
+
+    width: 200px;
+    height: 200px;
+    background-color: #716d6d;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+
+    border-radius: 50%;
+}
+
+
+.user_info_container{
+    padding: 20px;
+    font-size: 16px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 50px;
+
+}
+.user_info_container p>span{
+    color: #716d6d;
+}
+.user_info h2{
+    margin-bottom:10px ;
+}
+
+.sections_btns{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+
+}
+.sections_btns a{
+    position: relative;
+    
+    font-size: 24px;
+    background-color:#5fd4d4;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.sections_btns a::after{
+    position: absolute;
+    content: "";
+    left: 6px;
+    bottom: 8px;
+
+    height: 2px;
+    width: 0;
+    background-color: rgb(255, 255, 255);
+
+    transition: width 300ms;
+}
+.sections_btns a:hover::after{
+    width: 80%;
+}
