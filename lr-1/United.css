@@ -5,3 +5,12 @@ section {
 section:target {
   display: block;
 }
+
+.subpage {
+  display: none;
+}
+
+
+#profile:has(.subpage:target) {
+  display: block;
+}
