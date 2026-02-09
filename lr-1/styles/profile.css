@@ -12,7 +12,7 @@
 
     width: 200px;
     height: 200px;
-    background-color: #716d6d;
+    background-color: #ded9d9;
     
     display: flex;
     align-items: center;
@@ -23,7 +23,7 @@
 
 
 .user_info_container{
-    padding: 20px;
+    padding-top: 20px;
     font-size: 16px;
 
     display: flex;
@@ -43,18 +43,21 @@
 .sections_btns{
     display: flex;
     flex-direction: row;
-    gap: 30px;
-
-
+    gap: 20px;
 }
 .sections_btns a{
     position: relative;
     
-    font-size: 24px;
+    font-size: 20px;
     background-color:#5fd4d4;
     color: white;
     padding: 10px;
     border-radius: 10px;
+
+    transition: 300ms;
+}
+.sections_btns a:hover{
+    background-color: #72c5c5;
 }
 .sections_btns a::after{
     position: absolute;
