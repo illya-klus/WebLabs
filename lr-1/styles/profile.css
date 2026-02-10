@@ -11,13 +11,17 @@
 
     width: 200px;
     height: 200px;
-    background-color: #ded9d9;
+    background-color: #ffffff;
     
     display: flex;
     align-items: center;
     justify-content: center;  
 
     border-radius: 50%;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.183);
+}
+.user_image_container img{
+    width: 50px;
 }
 
 
