@@ -31,7 +31,7 @@
 }
 
 
-.cart {
+#about_us .cart {
     flex: 1;
     min-width: 280px;
     background: #ffffff;
@@ -40,7 +40,7 @@
     border-radius: 8px;
     transition: 100ms;
 }
-.cart:hover{
+#about_us .cart:hover{
     transform: scale(1.02);
 }
 
