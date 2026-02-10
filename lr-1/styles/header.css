@@ -1,5 +1,17 @@
 header {
+    position: sticky;
+    top: 10px;
+
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_wrapper{
+    width: 100%;
+    max-width: 1400px;
+
     font-size: 20px;
     padding: 20px;
 
@@ -8,40 +20,70 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    background-color: #2b2b2b;
+    background-color: #2b2b2be7;
     color: #ffffff;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+
+    border-radius: 20px;
 }
 
-header>.logo_conteiner {
+@media (max-width: 920px) {
+    header {
+        position: sticky;
+        top: 0px;
+
+        width: 100%;
+    }
+    
+    .header_wrapper{
+        width: 100%;
+        padding: 10px;
+
+        font-size: 16px;
+        padding: 10px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        background-color: #2b2b2b;
+        color: #ffffff;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        border-radius: 0;
+
+    }
+}
+
+.header_wrapper>.logo_conteiner {
     font-weight: 700;
     font-size: 32px;
     letter-spacing: 2px;
     cursor: pointer;
     transition: 0.3s;
 }
-header>.logo_conteiner:hover {
+.header_wrapper>.logo_conteiner:hover {
     color: #00d1b2;
     transform: scale(1.05);
 }
 
-header>.navigation_container {
+.header_wrapper>.navigation_container {
     display: flex;
     flex-direction: row;
     gap: 0 40px;
 }
 
-header>.navigation_container a {
+.header_wrapper>.navigation_container a {
     position: relative;
     text-decoration: none;
     color: #ffffff;
     font-weight: 500;
     transition: 0.3s;
 }
-header>.navigation_container a:hover {
+.header_wrapper>.navigation_container a:hover {
     color: #00d1b2;
 }
-header>.navigation_container a::after {
+.header_wrapper>.navigation_container a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -51,17 +93,17 @@ header>.navigation_container a::after {
     background-color: #00d1b2;
     transition: width 0.3s;
 }
-header>.navigation_container a:hover::after {
+.header_wrapper>.navigation_container a:hover::after {
     width: 100%;
 }
 
-header>.regiter_btns_conteiner {
+.header_wrapper>.regiter_btns_conteiner {
     display: flex;
     flex-direction: row;
     gap: 0 20px;
 }
 
-header>.regiter_btns_conteiner button {
+.header_wrapper>.regiter_btns_conteiner button {
     width: 120px;
     padding: 10px;
     background-color: #00d1b2;
@@ -73,7 +115,7 @@ header>.regiter_btns_conteiner button {
     transition: all 0.3s;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-header>.regiter_btns_conteiner button:hover {
+.header_wrapper>.regiter_btns_conteiner button:hover {
     background-color: #00bfa5;
     transform: translateY(-2px);
     box-shadow: 0 6px 10px rgba(0,0,0,0.25);
