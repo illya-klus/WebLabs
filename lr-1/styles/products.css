@@ -1,17 +1,14 @@
-
-
-
 #products .info{
     max-width: 1000px;
     margin: auto;
+    margin-top: 40px;
 
     display: flex;
     flex-wrap: wrap;
 
-    border-radius: 15px;
-    box-shadow: 0 4px 27px rgba(0, 0, 0, .15);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
 }
-
 #products .cart:nth-child(1),
 #products .cart:nth-child(2){
     border-bottom: 1px solid #c1c1c1;
@@ -33,9 +30,9 @@
     }
 
 }
-
-
 #products .cart {
+    background-color: #ffffff;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,15 +42,68 @@
 
     gap: 20px;
 
-
     text-align: center;
+    transition: 300ms;
 }
-
-
 #products .cart img{
     width: 50px;
     height: 50px;
 }
+
+
+
+.baner {
+    min-height: 400px;
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+
+    background-image: url("/images/backgrounds/logan-weaver-lgnwvr-YKSwncA1eKU-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.brands {
+    max-width: 1000px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+}
+.item {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: 50ms;
+}
+.item:hover{
+    transform: scale(1.02);
+}
+@media (max-width: 1020px) {
+    .brands {
+        max-width: 700px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .item {
+        padding: 2px;
+    }
+}
+@media (max-width: 600px) {
+    .brands {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .baner {
+        padding: 30px 15px;
+    }
+}
+
 
 
 
