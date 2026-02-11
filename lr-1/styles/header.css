@@ -28,6 +28,8 @@ header {
     border-radius: 20px;
 }
 
+.navigation_container{}
+
 @media (max-width: 920px) {
     header {
         position: sticky;
@@ -53,6 +55,13 @@ header {
         box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         border-radius: 0;
 
+    }
+}
+
+@media (max-width: 850px) {
+    .navigation_container{
+        overflow: hidden;
+        visibility: hidden;
     }
 }
 

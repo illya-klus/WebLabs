@@ -8,6 +8,12 @@ main{
   height: auto;
 }
 
+@media (max-width: 920px) {
+    main{
+      margin-top: 20px;
+    }
+}
+
 section {
   display: none;
 }

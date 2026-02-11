@@ -7,6 +7,27 @@
     gap: 80px;
 
 }
+@media(max-width:1300px){
+    .profile_conteiner{
+        max-width: 800px;
+
+        margin: auto;
+    }
+}
+@media(max-width:865px){
+    .profile_conteiner{
+        max-width: 600px;
+
+        margin: auto;
+    }
+}
+@media(max-width:754px){
+    .profile_conteiner{
+        max-width: 500px;
+
+        margin: auto;
+    }
+}
 .user_image_container{
 
     width: 200px;
