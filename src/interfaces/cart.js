@@ -8,6 +8,7 @@ export const addToCart = (card) => {
   const existing = cart.find(item => item.id === card.id);
 
   if (existing) {
+    if(existing.quantity == undefined) existing.quantity = 0;
     existing.quantity += 1;
   } else {
     cart.push({

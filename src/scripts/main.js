@@ -1,7 +1,7 @@
 import downloadProducts from '../features/products/downloadProducts.js';
 import { createMenu } from '../features/header/header.js';
 import { initAuth } from '../features/auth/auth.js';
-import { renderCart } from '../features/cart/cart.js';
+import {renderCart} from '../features/cart/cart.js'
 
 
 const loadHTML = async (id, file) => {
@@ -60,6 +60,7 @@ async function handleRoute() {
     
     case '#profile-selected':
         await loadHTML('profile_add_info','../src/features/cart/cart.html');
+        renderCart();
         break
 
     default:

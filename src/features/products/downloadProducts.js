@@ -1,5 +1,6 @@
 import { getAllProducts } from "../../interfaces/products.js";
 import { addToCart } from '../../interfaces/cart.js';
+import { renderCart } from "../cart/cart.js";
 
 
 
@@ -54,6 +55,7 @@ function createcoastAndAddPart(card) {
 
     button.addEventListener('click', () => {
         addToCart(card);
+        renderCart();
     });
 
     coastAndAddButton.append(p, button);
