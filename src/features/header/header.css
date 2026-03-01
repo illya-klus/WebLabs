@@ -13,6 +13,8 @@ header {
 .offVisibility{
     overflow: hidden;
     visibility: hidden;
+    width: 0;
+    height: 0;
 }
 
 .menu_btn {

@@ -1,5 +1,6 @@
 import downloadProducts from '../features/products/downloadProducts.js';
 import { createMenu } from '../features/header/header.js';
+import { initAuth } from '../features/auth/auth.js';
 
 
 const loadHTML = async (id, file) => {
@@ -25,6 +26,16 @@ async function handleRoute() {
   const route = window.location.hash;
 
   switch (route) {
+    case '#login':
+        await loadHTML('main', '../src/features/auth/login.html');
+        initAuth();
+        break;
+
+    case '#register':
+        await loadHTML('main', '../src/features/auth/register.html');
+        initAuth();
+        break;
+
     case '#discounts':
         await loadHTML('main','../src/features/discount/discounts.html');
         break
