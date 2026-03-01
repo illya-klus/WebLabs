@@ -110,6 +110,13 @@ const generateCard = (card) => {
     }
 
     itemDiv.append(imageDiv, descriptionDiv, stockSpan, coastAndAddButton);
+
+    itemDiv.addEventListener('click', (e) => {
+        if(e.target.closest('button')) return;
+
+        window.location.hash = `#product-${id}`;
+    });
+    
     return itemDiv;
 }
 
@@ -143,6 +150,8 @@ const downloadProductsDecorator = (func, delay) =>{
         return newResult;
     }
 }
+
+
 
 export default downloadProductsDecorator(downloadProducts, 30*60*60*1000);
 

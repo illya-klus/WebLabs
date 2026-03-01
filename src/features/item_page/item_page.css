@@ -1,0 +1,129 @@
+
+
+.product_detail_card {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+    max-width: 900px;
+    margin: 40px auto;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+/* Зображення продукту */
+.product_detail_card .product_image_conteiner {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product_detail_card .product_image_conteiner img {
+    width: 100%;
+    max-width: 400px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Опис продукту */
+.product_detail_card .product_decription {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.product_detail_card .product_decription h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111;
+}
+
+.product_detail_card .product_decription p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.product_detail_card .product_decription span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #22c55e;
+}
+
+/* Ціна */
+.product_detail_card .product_decription .price {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+}
+
+/* Кнопки дій */
+.product_detail_card .actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.product_detail_card .actions button {
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* Кнопка Додати/Додано */
+.product_detail_card .actions button.add-to-cart {
+    background: #111;
+    color: #fff;
+}
+
+.product_detail_card .actions button.add-to-cart:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+.product_detail_card .actions button.add-to-cart.added {
+    background: #22c55e;
+    cursor: default;
+    transform: none;
+}
+
+/* Кнопка повернення */
+.product_detail_card .actions button.back-to-list {
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+.product_detail_card .actions button.back-to-list:hover {
+    background: #f0f0f0;
+    transform: translateY(-1px);
+}
+
+/* Адаптив для мобільних */
+@media (max-width: 768px) {
+    .product_detail_card {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .product_detail_card .product_image_conteiner img {
+        max-width: 100%;
+    }
+
+    .product_detail_card .actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
