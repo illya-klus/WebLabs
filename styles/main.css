@@ -14,9 +14,9 @@ main{
     }
 }
 
-/* section {
+section {
   display: none;
-} */
+}
 
 section:target {
   display: block;
