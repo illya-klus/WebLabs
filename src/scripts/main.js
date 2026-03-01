@@ -1,4 +1,6 @@
 import downloadProducts from '../features/products/downloadProducts.js';
+import { createMenu } from '../features/header/header.js';
+
 
 const loadHTML = async (id, file) => {
     const res = await fetch(file);
@@ -8,12 +10,15 @@ const loadHTML = async (id, file) => {
     return document.getElementById(id);
 }
 
+async function initialize(){
+    await loadHTML('header', '../src/features/header/header.html');
+    createMenu();
 
-loadHTML('header', '../src/features/header/header.html');
+    await loadHTML('main', '../src/features/products/products.html')
 
-loadHTML('main', '../src/features/products/products.html')
+    await loadHTML('footer', '../src/features/footer/footer.html');
+}
 
-loadHTML('footer', '../src/features/footer/footer.html');
 
 
 async function handleRoute() {
@@ -49,7 +54,7 @@ async function handleRoute() {
   }
 }
 
-
+initialize();
 handleRoute();
 
 window.addEventListener('hashchange', handleRoute)
