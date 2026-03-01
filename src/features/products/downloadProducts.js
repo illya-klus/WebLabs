@@ -1,4 +1,4 @@
-import { getAllProducts } from "../interfaces/products.js";
+import { getAllProducts } from "../../interfaces/products.js";
 
 
 
@@ -8,7 +8,7 @@ function createDiscountPart (discount) {
 
     let discountP = document.createElement('p');
     discountP.classList.add("discount");
-    discountP.textContent = discount;
+    discountP.textContent = "" + discount + "%";
 
     discountDiv.append(discountP);
 
@@ -38,7 +38,7 @@ function createDescriptionPart(brand, title){
     descriptionP.textContent = title;
 
     descriptionDiv.append(descriptionH3, descriptionP);
-    return descriptionDiv
+    return descriptionDiv;
 }
 
 function createcoastAndAddPart(price, currency) {

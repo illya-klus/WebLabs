@@ -57,6 +57,27 @@
     gap: 50px;
 
 }
+@media(max-width:500px){
+    .user_info_container{
+        padding-top: 20px;
+        font-size: 16px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 20px;
+
+    }
+    .user_image_container{
+        width: 120px;
+        height: 120px;
+    }
+    .user_image_container img{
+        width: 30px;
+    }
+}
+
 .user_info_container p>span{
     color: #716d6d;
 }
@@ -98,3 +119,34 @@
 .sections_btns a:hover::after{
     width: 80%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
