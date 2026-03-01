@@ -37,7 +37,8 @@ function createDescriptionPart(brand, title){
     let descriptionP = document.createElement('p');
     descriptionP.textContent = title;
 
-    return descriptionDiv.append(descriptionH3, descriptionP);
+    descriptionDiv.append(descriptionH3, descriptionP);
+    return descriptionDiv
 }
 
 function createcoastAndAddPart(price, currency) {
@@ -50,7 +51,8 @@ function createcoastAndAddPart(price, currency) {
     let button = document.createElement('button');
     button.textContent = "Додати до кошика";
 
-    return coastAndAddButton.append(p, button);
+    coastAndAddButton.append(p, button);
+    return coastAndAddButton
 }
 
 const generateCard = (card) => {
@@ -71,23 +73,29 @@ const generateCard = (card) => {
 
     let imageDiv = createImagePart(image);
     let descriptionDiv = createDescriptionPart(brand, title+" "+description);
-    let stockSpan = document.createElement('span').textContent(`Залишилось ${stock} на складі`);
+    let stockSpan = document.createElement('span');
+    stockSpan.textContent = `Залишилось ${stock} на складі`;
     let coastAndAddButton = createcoastAndAddPart(price, currency);
 
     let discountDiv;
     if(discount){
         discountDiv = createDiscountPart(discount);
-        return itemDiv.append(discountDiv, imageDiv, descriptionDiv, stockSpan, coastAndAddButton)
+        itemDiv.append(discountDiv, imageDiv, descriptionDiv, stockSpan, coastAndAddButton)
+        return itemDiv;
     }
 
-    return itemDiv.append(imageDiv, descriptionDiv, stockSpan, coastAndAddButton)
+    itemDiv.append(imageDiv, descriptionDiv, stockSpan, coastAndAddButton);
+    return itemDiv;
 }
 
-export const downloadProducts = (parentConteiner) => {
+const downloadProducts = (parentConteiner) => {
     const products = getAllProducts();
 
-    if(!products){
-        parentConteiner.append(document.createElement('p').textContent('Корзина порожня'));
+    if(!products || products.length === 0){
+        let p = document.createElement('p');
+        parentConteiner.textContent = 'Корзина порожня';
+        parentConteiner.append(p);
+
         return;
     }
 
@@ -95,6 +103,23 @@ export const downloadProducts = (parentConteiner) => {
         parentConteiner.append(generateCard(staff));
 
 }
+
+const downloadProductsDecorator = (func, delay) =>{
+    let cachedResult = null;
+    const timeMark = setInterval(() => cachedResult = null, delay);
+
+    return function(parentConteiner){
+        if(cachedResult)
+            return cachedResult;
+        
+        let newResult = func(parentConteiner);
+        cachedResult = newResult;
+
+        return newResult;
+    }
+}
+
+export default downloadProductsDecorator(downloadProducts, 30*60*60*1000);
 
 
 
