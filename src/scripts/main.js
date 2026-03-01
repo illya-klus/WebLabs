@@ -1,6 +1,7 @@
 import downloadProducts from '../features/products/downloadProducts.js';
 import { createMenu } from '../features/header/header.js';
 import { initAuth } from '../features/auth/auth.js';
+import { renderCart } from '../features/cart/cart.js';
 
 
 const loadHTML = async (id, file) => {
@@ -26,6 +27,11 @@ async function handleRoute() {
   const route = window.location.hash;
 
   switch (route) {
+    case '#cart':
+        await loadHTML('main', '../src/features/cart/cart.html');
+        renderCart();
+        break;
+
     case '#login':
         await loadHTML('main', '../src/features/auth/login.html');
         initAuth();
@@ -53,7 +59,7 @@ async function handleRoute() {
         break
     
     case '#profile-selected':
-        await loadHTML('profile_add_info','../src/features/profile/profile_selected/profile-selected.html');
+        await loadHTML('profile_add_info','../src/features/cart/cart.html');
         break
 
     default:

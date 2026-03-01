@@ -1,4 +1,5 @@
 import { getAllProducts } from "../../interfaces/products.js";
+import { addToCart } from '../../interfaces/cart.js';
 
 
 
@@ -41,15 +42,19 @@ function createDescriptionPart(brand, title){
     return descriptionDiv;
 }
 
-function createcoastAndAddPart(price, currency) {
+function createcoastAndAddPart(card) {
     let coastAndAddButton = document.createElement('div');
     coastAndAddButton.classList.add("cost_add_btn");
 
     let p = document.createElement('p');
-    p.textContent = ""+ price + " " + currency;
+    p.textContent = ""+ card.price + " " + card.currency;
 
     let button = document.createElement('button');
     button.textContent = "Додати";
+
+    button.addEventListener('click', () => {
+        addToCart(card);
+    });
 
     coastAndAddButton.append(p, button);
     return coastAndAddButton
@@ -75,7 +80,7 @@ const generateCard = (card) => {
     let descriptionDiv = createDescriptionPart(brand, title+" "+description);
     let stockSpan = document.createElement('span');
     stockSpan.textContent = `Залишилось ${stock} на складі`;
-    let coastAndAddButton = createcoastAndAddPart(price, currency);
+    let coastAndAddButton = createcoastAndAddPart(card);
 
     let discountDiv;
     if(discount){
