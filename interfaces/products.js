@@ -1,4 +1,4 @@
-import products from '../db/products';
+import {products} from '../db/products.js';
 
 export const getAllProducts = () => {
     return products;

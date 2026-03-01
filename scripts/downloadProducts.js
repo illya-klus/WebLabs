@@ -1,4 +1,4 @@
-import { getAllProducts } from "../interfaces/products";
+import { getAllProducts } from "../interfaces/products.js";
 
 
 
@@ -49,7 +49,7 @@ function createcoastAndAddPart(price, currency) {
     p.textContent = ""+ price + " " + currency;
 
     let button = document.createElement('button');
-    button.textContent = "Додати до кошика";
+    button.textContent = "Додати";
 
     coastAndAddButton.append(p, button);
     return coastAndAddButton
@@ -99,7 +99,7 @@ const downloadProducts = (parentConteiner) => {
         return;
     }
 
-    for(staff of products)
+    for(let staff of products)
         parentConteiner.append(generateCard(staff));
 
 }

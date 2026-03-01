@@ -67,6 +67,7 @@
     margin: auto;
 
     display: grid;
+    
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 20px;
 }
@@ -78,9 +79,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     transition: 50ms;
+}
+.item img {
+    border-radius: 12px;
 }
 .item:hover{
     transform: scale(1.02);

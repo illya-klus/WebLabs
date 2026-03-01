@@ -67,7 +67,7 @@
 }
 .cost_add_btn button {
     padding: 8px 14px;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 600;
 
     background: #111;
@@ -85,7 +85,7 @@
 }
 
 .cost_add_btn p {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
 }
 

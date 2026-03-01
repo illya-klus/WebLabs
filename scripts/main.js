@@ -1,7 +1,11 @@
-const loadHTML = (id, file) => {
-    fetch(file)
-        .then(res => res.text())
-        .then(html => document.getElementById(id).innerHTML = html)
+import downloadProducts from './downloadProducts.js';
+
+const loadHTML = async (id, file) => {
+    const res = await fetch(file);
+    const html = await res.text();
+    document.getElementById(id).innerHTML = html;
+
+    return document.getElementById(id);
 }
 
 
@@ -12,32 +16,36 @@ loadHTML('main', '../partials/products.html')
 loadHTML('footer', '../partials/footer.html');
 
 
-function handleRoute() {
+async function handleRoute() {
   const route = window.location.hash;
 
   switch (route) {
     case '#discounts':
-        loadHTML('main','partials/discounts.html')
+        await loadHTML('main','partials/discounts.html');
         break
 
     case '#profile':
-        loadHTML('main','partials/profile.html')
+        await loadHTML('main','partials/profile.html');
         break
 
     case '#about_us':
-        loadHTML('main','partials/about_us.html')
+        await loadHTML('main','partials/about_us.html');
         break
 
     case '#profile-history':
-        loadHTML('profile_add_info','partials/profile_history.html')
+        await loadHTML('profile_add_info','partials/profile_history.html');
         break
     
     case '#profile-selected':
-        loadHTML('profile_add_info','partials/profile-selected.html')
+        await loadHTML('profile_add_info','partials/profile-selected.html');
         break
 
     default:
-        loadHTML('main','partials/products.html')
+        const mainEl = await loadHTML('main','partials/products.html');
+
+        let div = document.getElementById('products_container');
+        downloadProducts(div);
+
   }
 }
 
