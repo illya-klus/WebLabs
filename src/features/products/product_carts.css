@@ -88,5 +88,13 @@
     font-size: 16px;
     font-weight: 700;
 }
+.cost_add_btn button.added {
+    background: #22c55e;
+    color: #fff;
+    cursor: default;
+}
 
+.cost_add_btn button.added::after {
+    content: " ✓";
+}
 

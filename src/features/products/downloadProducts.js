@@ -1,7 +1,7 @@
 import { getAllProducts } from "../../interfaces/products.js";
 import { addToCart } from '../../interfaces/cart.js';
 import { renderCart } from "../cart/cart.js";
-
+import { getCart } from "../../interfaces/cart.js";
 
 
 function createDiscountPart (discount) {
@@ -43,23 +43,41 @@ function createDescriptionPart(brand, title){
     return descriptionDiv;
 }
 
+
+const isInCart = (id) => {
+  return getCart().some(item => item.id === id);
+};
 function createcoastAndAddPart(card) {
-    let coastAndAddButton = document.createElement('div');
+    const coastAndAddButton = document.createElement('div');
     coastAndAddButton.classList.add("cost_add_btn");
 
-    let p = document.createElement('p');
-    p.textContent = ""+ card.price + " " + card.currency;
+    const p = document.createElement('p');
+    p.textContent = `${card.price} ${card.currency}`;
 
-    let button = document.createElement('button');
-    button.textContent = "Додати";
+    const button = document.createElement('button');
+    button.classList.add('add-to-cart');
+
+    const inCart = isInCart(card.id);
+
+    if (inCart) {
+        button.classList.add('added');
+        button.textContent = 'Додано';
+    } else {
+        button.textContent = 'Додати';
+    }
 
     button.addEventListener('click', () => {
+        if (button.classList.contains('added')) return;
+
         addToCart(card);
         renderCart();
+
+        button.classList.add('added');
+        button.textContent = 'Додано';
     });
 
     coastAndAddButton.append(p, button);
-    return coastAndAddButton
+    return coastAndAddButton;
 }
 
 const generateCard = (card) => {

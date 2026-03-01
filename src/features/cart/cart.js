@@ -4,6 +4,8 @@ import {
   clearCart
 } from '../../interfaces/cart.js';
 
+import { addToCart } from '../../interfaces/cart.js';
+
 const getCartContainer = () => document.getElementById('cart');
 
 
@@ -91,6 +93,13 @@ export const renderCart = () => {
 
   bindCartEvents();
   bindClearCart();
+};
+
+export const updateClearCartState = () => {
+  const btn = document.getElementById('clear-cart');
+  if (!btn) return;
+
+  btn.disabled = getCart().length === 0;
 };
 
 
