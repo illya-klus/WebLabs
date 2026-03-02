@@ -252,3 +252,24 @@
     box-shadow: none;
 }
 
+
+#cart-summary {
+  margin-top: 20px;
+  padding: 16px;
+  border-top: 2px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#order-btn {
+  padding: 10px 16px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#order-btn:hover {
+  opacity: 0.8;
+}

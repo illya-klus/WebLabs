@@ -6,6 +6,19 @@ import {
 
 import { addToCart } from '../../interfaces/cart.js';
 
+
+const updateCartTotal = () => {
+  const totalEl = document.getElementById('cart-total');
+  if (!totalEl) return;
+
+  const total = getCart().reduce((sum, item) => {
+    return sum + item.price * item.quantity;
+  }, 0);
+
+  totalEl.textContent = `Total: $${total}`;
+};
+
+
 const getCartContainer = () => document.getElementById('cart');
 
 
@@ -79,6 +92,33 @@ const bindClearCart = () => {
 };
 
 
+const bindOrderButton = () => {
+  const btn = document.getElementById('order-btn');
+  if (!btn) return;
+
+  btn.onclick = () => {
+    const cart = getCart();
+
+    if (cart.length === 0) {
+      alert('Корзина пуста 🛒');
+      return;
+    }
+
+    alert('Замовлення оформлено 🚀');
+
+    clearCart();
+    renderCart();
+  };
+};
+
+
+export const updateClearCartState = () => {
+  const btn = document.getElementById('clear-cart');
+  if (!btn) return;
+
+  btn.disabled = getCart().length === 0;
+};
+
 export const renderCart = () => {
   const cartContainer = getCartContainer();
   if (!cartContainer) return;
@@ -91,15 +131,11 @@ export const renderCart = () => {
     cartContainer.insertAdjacentHTML('beforeend', cartItemTemplate(item));
   });
 
+   updateCartTotal();
   bindCartEvents();
   bindClearCart();
+  bindOrderButton();
 };
 
-export const updateClearCartState = () => {
-  const btn = document.getElementById('clear-cart');
-  if (!btn) return;
-
-  btn.disabled = getCart().length === 0;
-};
 
 
