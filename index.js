@@ -1,10 +1,16 @@
-import downloadProducts from '../features/products/downloadProducts.js';
-import { createMenu } from '../features/header/header.js';
-import { initAuth } from '../features/auth/auth.js';
-import {renderCart} from '../features/cart/cart.js';
-import { updateClearCartState } from '../features/cart/cart.js';
-import { getAllProducts } from '../interfaces/products.js';
-import { renderProductDetail } from '../features/item_page/renderProductDetails.js';
+import downloadProducts from './src/features/products/downloadProducts.js';
+import {createMenu} from './src/features/header/header.js'
+
+import { initAuth } from './src/features/auth/auth.js';
+
+import {renderCart} from './src/features/cart/cart.js';
+
+import { updateClearCartState } from './src/features/cart/cart.js';
+
+import { getAllProducts } from './src/interfaces/products.js';
+
+import { renderProductDetail } from './src/features/item_page/renderProductDetails.js';
+
 
 
 const loadHTML = async (id, file) => {
